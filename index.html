@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>vue js looping products</title>
+</head>
+<body>
+    <section id="app" class="min-sect">
+        <h1 class="title">products</h1>
+        <div class="pro-container">
+            <div class="scroll">
+                <div v-for="product in products" :key="product.id" class="card">
+                    <img :src="product.img" alt="product" class="pro-img">
+                    <div class="card-container">
+                        <h4 class="pro-heading">{{product.heading}}</h4>
+                        <p class="pro-price">{{product.price}}$</p>
+                    </div>
+                    <div class="colors"><span v-for="color in product.colors" class="color" :style="`background-color: ${color}`"></span></div>
+                    <a href="#" class="buy-btn">buy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
